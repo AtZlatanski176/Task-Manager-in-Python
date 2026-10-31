@@ -1,25 +1,22 @@
 import contexts.dataContext as dataContext
 
-def create_task(tasks):
-  task = input("Enter the task: ")
-  tasks.append(task)
-  dataContext.save_tasks(tasks)
-  print("Task created successfully!")
+tasks = dataContext.load_tasks()
+
+def create_task(task):
+    tasks.append(task)
+    dataContext.save_tasks(tasks)
+    print("Task created successfully!")
 
 #def read_task(tasks, index):
 
-def readAll_tasks(tasks):
-  print("Tasks:")
-  for index, task in enumerate(tasks):
-    print(f"{index + 1}. {task}")
+def readAll_tasks():
+  return tasks
 
 #def update_task
 
-def delete_task(tasks):
-  readAll_tasks(tasks)
+def delete_task(task_index):
   while True:
     try:
-      task_index = int(input("Enter the index of the task to delete: "))
       if 1 <= task_index <= len(tasks):
         deleted_task = tasks.pop(task_index - 1)
         print(f"Task '{deleted_task}' deleted successfully!")

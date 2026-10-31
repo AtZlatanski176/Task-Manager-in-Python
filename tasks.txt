@@ -2,3 +2,7 @@ Make Task Manager
 Task Manager Backend
 Task Manager Front End
 Task Manager Database
+Learn Python
+Make a million before 23
+Make a scrollbar
+read
